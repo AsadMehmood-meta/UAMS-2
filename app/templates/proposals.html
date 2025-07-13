@@ -1,0 +1,39 @@
+{# --- Proposal Generator Page (proposal.html) --- #}
+{% extends "base.html" %}
+{% block content %}
+<div class="container py-5">
+  <h2 class="mb-4">Proposal Generator</h2>
+  <div class="card shadow">
+    <div class="card-body">
+      <form>
+        <div class="mb-3">
+          <label class="form-label">Client Name</label>
+          <input type="text" class="form-control" placeholder="John Doe">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Project Description</label>
+          <textarea class="form-control" rows="4"></textarea>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Tone</label>
+          <select class="form-select">
+            <option>Professional</option>
+            <option>Friendly</option>
+            <option>Direct</option>
+          </select>
+        </div>
+        <button class="btn btn-success">Generate Proposal</button>
+      </form>
+
+      <hr>
+      <h5>Generated Proposal:</h5>
+      <div class="alert alert-secondary">
+        Dear John Doe,
+        <br><br>
+        I am excited to apply for your project...
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+

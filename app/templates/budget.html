@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container mt-5">
+  <h2 class="mb-4">Defined Budget Thresholds</h2>
+
+  <!-- Per-Category Budget Thresholds -->
+  <div class="card mb-4">
+    <div class="card-header bg-black text-white">
+      💼 Per-Category Budget Thresholds
+    </div>
+    <div class="card-body">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item d-flex justify-content-between">
+          <span>Design</span> <strong>$1,000</strong>
+        </li>
+        <li class="list-group-item d-flex justify-content-between">
+          <span>Development</span> <strong>$2,500</strong>
+        </li>
+        <li class="list-group-item d-flex justify-content-between">
+          <span>QA & Testing</span> <strong>$700</strong>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Per-Hour Rate Thresholds -->
+  <div class="card mb-4">
+    <div class="card-header bg-black text-white">
+      ⏱️ Per-Hour Rate Thresholds
+    </div>
+    <div class="card-body">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item d-flex justify-content-between">
+          <span>Junior Developer</span> <strong>$15/hr</strong>
+        </li>
+        <li class="list-group-item d-flex justify-content-between">
+          <span>Senior Developer</span> <strong>$35/hr</strong>
+        </li>
+        <li class="list-group-item d-flex justify-content-between">
+          <span>UI/UX Designer</span> <strong>$25/hr</strong>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Per-Project Budget Thresholds -->
+  <div class="card mb-4">
+    <div class="card-header bg-black text-white">
+      📁 Per-Project Budget Thresholds
+    </div>
+    <div class="card-body">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item d-flex justify-content-between">
+          <span>E-commerce Website</span> <strong>$5,000</strong>
+        </li>
+        <li class="list-group-item d-flex justify-content-between">
+          <span>Mobile App</span> <strong>$8,000</strong>
+        </li>
+        <li class="list-group-item d-flex justify-content-between">
+          <span>CRM System Upgrade</span> <strong>$10,000</strong>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

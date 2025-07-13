@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+  .home-wrapper {
+    min-height: 85vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .home-welcome {
+    flex: 1;
+    padding: 40px;
+    min-width: 300px;
+  }
+
+  .login-container {
+    flex: 1;
+    max-width: 400px;
+    padding: 40px;
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    min-width: 300px;
+  }
+
+  .form-control:focus {
+    box-shadow: 0 0 5px rgba(0,123,255,0.5);
+  }
+</style>
+
+<div class="container home-wrapper">
+  
+  <!-- Left side: welcome text -->
+  <div class="home-welcome">
+    <h1 class="mb-4">Welcome to MyUpwork Agency Panel</h1>
+    <p class="lead">Manage your projects, team, budgets and proposals efficiently. Access your dashboard, reports, and more — all in one place.</p>
+    <p class="text-muted mt-4">Please log in to continue to your workspace.</p>
+  </div>
+
+  <!-- Right side: login form -->
+  <div class="login-container">
+    <h4 class="text-center mb-4">Login to Continue</h4>
+    <form action="/login" method="POST">
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" name="username" id="username" class="form-control" placeholder="Enter username" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" name="password" id="password" class="form-control" placeholder="Enter password" required>
+      </div>
+
+      <div class="d-grid mb-3">
+        <button type="submit" class="btn btn-primary">Login</button>
+      </div>
+    </form>
+
+    <div class="text-center">
+      <p class="mb-0">Don't have an account?</p>
+      <a href="/signup" class="btn btn-outline-secondary mt-2">Sign Up</a>
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}

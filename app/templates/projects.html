@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Projects</title>
+  <!-- for htmx cdn -->
+  <script src="https://unpkg.com/htmx.org@1.9.2"></script>
+</head>
+<body>
+
+<h1>Project List</h1>
+
+<!-- HTMX trigger on load -->
+<div 
+  id="project-container"
+  hx-get="/projects/list"
+  hx-trigger="load"
+  hx-target="#project-container"
+  hx-swap="innerHTML">
+</div>
+
+</body>
+</html>

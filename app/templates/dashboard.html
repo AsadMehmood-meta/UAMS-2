@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+  .dashboard-header {
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+  .card-title {
+    font-size: 1.1rem;
+  }
+  .card {
+    border-radius: 15px;
+  }
+</style>
+
+<div class="container">
+  <div class="dashboard-header text-center">
+    <h2>Agency Dashboard</h2>
+    <p class="text-muted">Quick overview of your operations</p>
+  </div>
+
+  <!-- Row 1: Stats Summary -->
+  <div class="row mb-4">
+    <div class="col-md-3 mb-3">
+      <div class="card text-white bg-primary">
+        <div class="card-body">
+          <h5 class="card-title">Total Jobs</h5>
+          <p class="card-text display-6">42</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <div class="card text-white bg-success">
+        <div class="card-body">
+          <h5 class="card-title">Active Projects</h5>
+          <p class="card-text display-6">12</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <div class="card text-white bg-warning">
+        <div class="card-body">
+          <h5 class="card-title">Pending Tasks</h5>
+          <p class="card-text display-6">23</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <div class="card text-white bg-danger">
+        <div class="card-body">
+          <h5 class="card-title">Budget Used</h5>
+          <p class="card-text display-6">$8.2k</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Row 2: Proposals and Team -->
+  <div class="row mb-4">
+    <div class="col-md-6 mb-3">
+      <div class="card border-secondary">
+        <div class="card-body">
+          <h5 class="card-title">Proposal Success Rate</h5>
+          <p class="card-text">68% proposals accepted</p>
+          <div class="progress">
+            <div class="progress-bar bg-info" style="width: 68%">68%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 mb-3">
+      <div class="card border-secondary">
+        <div class="card-body">
+          <h5 class="card-title">Team Productivity</h5>
+          <p class="card-text">Overall performance this month</p>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Avg. Task Completion: 82%</li>
+            <li class="list-group-item">Top Performer: Sarah (96%)</li>
+            <li class="list-group-item">Late Tasks: 3</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Row 3: Upcoming Deadlines -->
+  <div class="row mb-4">
+    <div class="col">
+      <div class="card border-dark">
+        <div class="card-body">
+          <h5 class="card-title">Upcoming Deadlines</h5>
+          <table class="table table-striped mt-3">
+            <thead>
+              <tr>
+                <th>Project</th>
+                <th>Due Date</th>
+                <th>Assigned To</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>CRM Upgrade</td>
+                <td>July 20, 2025</td>
+                <td>Ali Raza</td>
+              </tr>
+              <tr>
+                <td>Landing Page Redesign</td>
+                <td>July 25, 2025</td>
+                <td>Sana Tariq</td>
+              </tr>
+              <tr>
+                <td>App Testing</td>
+                <td>August 2, 2025</td>
+                <td>Team QA</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}
