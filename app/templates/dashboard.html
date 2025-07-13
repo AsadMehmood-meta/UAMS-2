@@ -1,24 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
 
-<style>
-  .dashboard-header {
-    margin-top: 30px;
-    margin-bottom: 20px;
-  }
-  .card-title {
-    font-size: 1.1rem;
-  }
-  .card {
-    border-radius: 15px;
-  }
-</style>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
 
 <div class="container">
-  <div class="dashboard-header text-center">
-    <h2>Agency Dashboard</h2>
-    <p class="text-muted">Quick overview of your operations</p>
-  </div>
+  <div class="section-title">
+    <h2>Agency Dashboard</h2>   
+  </div> 
+  <p></p>
 
   <!-- Row 1: Stats Summary -->
   <div class="row mb-4">
@@ -61,10 +50,10 @@
     <div class="col-md-6 mb-3">
       <div class="card border-secondary">
         <div class="card-body">
-          <h5 class="card-title">Proposal Success Rate</h5>
+          <h5 class="table-card-header">Proposal Success Rate</h5>
           <p class="card-text">68% proposals accepted</p>
           <div class="progress">
-            <div class="progress-bar" style="width: 68%; background-color: #485461;">68%</div>
+            <div class="progress-bar" style="width: 68%; background-color: #009688;">68%</div>
           </div>
         </div>
       </div>
@@ -73,8 +62,7 @@
     <div class="col-md-6 mb-3">
       <div class="card border-secondary">
         <div class="card-body">
-          <h5 class="card-title">Team Productivity</h5>
-          <p class="card-text">Overall performance this month</p>
+          <h5 class="table-card-header">Team Productivity -Overall performance this month</h5>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">Avg. Task Completion: 82%</li>
             <li class="list-group-item">Top Performer: Sarah (96%)</li>
@@ -89,86 +77,85 @@
   <div class="row mb-4">
     <div class="col">
       <div class="card border-dark">
-        <div class="card-body">
-          <h5 class="card-title">Upcoming Deadlines</h5>
-          <table class="table table-striped mt-3">
-            <thead>
-              <tr>
-                <th>Project</th>
-                <th>Due Date</th>
-                <th>Assigned To</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>CRM Upgrade</td>
-                <td>July 20, 2025</td>
-                <td>Ali Raza</td>
-              </tr>
-              <tr>
-                <td>Landing Page Redesign</td>
-                <td>July 25, 2025</td>
-                <td>Sana Tariq</td>
-              </tr>
-              <tr>
-                <td>App Testing</td>
-                <td>August 2, 2025</td>
-                <td>Team QA</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <div class="table-card-header">Upcoming Deadlines</div>
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Project</th>
+              <th>Due Date</th>
+              <th>Assigned To</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>CRM Upgrade</td>
+              <td>July 20, 2025</td>
+              <td>Ali Raza</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Landing Page Redesign</td>
+              <td>July 25, 2025</td>
+              <td>Sana Tariq</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>App Testing</td>
+              <td>August 2, 2025</td>
+              <td>Team QA</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
 
-  <!-- ✅ Row 4: Operational Reports -->
+  <!-- Row 4: Operational Reports -->
   <div class="row mb-5">
     <div class="col">
-      <div class="card border-info">
-        <div class="card-body">
-          <h5 class="card-title">Operational Reports</h5>
-          <table class="table table-bordered table-hover mt-3">
-            <thead class="table-dark">
-              <tr>
-                <th>#</th>
-                <th>Metric</th>
-                <th>Value</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td>Jobs Scraped</td>
-                <td>192</td>
-                <td><span class="badge bg-success">Updated</span></td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>Proposals Sent</td>
-                <td>87</td>
-                <td><span class="badge bg-success">Stable</span></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Tasks Assigned</td>
-                <td>34</td>
-                <td><span class="badge bg-info">In Progress</span></td>
-              </tr>
-              <tr>
-                <td>4</td>
-                <td>Active Projects</td>
-                <td>12</td>
-                <td><span class="badge bg-primary">Running</span></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+      <div class="card border-dark">
+        <div class="table-card-header">Operational Reports</div>
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Metric</th>
+              <th>Value</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Jobs Scraped</td>
+              <td>192</td>
+              <td><span class="badge bg-success">Updated</span></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Proposals Sent</td>
+              <td>87</td>
+              <td><span class="badge bg-success">Stable</span></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Tasks Assigned</td>
+              <td>34</td>
+              <td><span class="badge bg-info text-dark">In Progress</span></td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Active Projects</td>
+              <td>12</td>
+              <td><span class="badge bg-primary">Running</span></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
-
 </div>
 
 {% endblock %}
