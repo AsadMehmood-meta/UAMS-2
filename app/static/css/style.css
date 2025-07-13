@@ -1,4 +1,32 @@
 
+body {
+  padding-top: 56px; /* Adjust based on your navbar height */
+  /* background: linear-gradient(to right, #bdc3c7, #2c3e50); */
+  background: linear-gradient(to right, #bdc3c7, #dbe4ea);
+  /* background: linear-gradient(to right, #b0b4b9, #d0d4d9); */
+
+}
+
+.custom-navbar {
+  background: linear-gradient(to right, #28313B, #485461);
+}
+
+.navbar-nav .nav-link {
+  transition: transform 0.2s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover {
+  transform: scale(1.1);
+}
+
+/* Show dropdown on hover */
+.navbar-nav .dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0; /* optional: remove dropdown jump */
+}
+
+
+
   .home-wrapper {
     min-height: 85vh;
     display: flex;
@@ -26,3 +54,23 @@
   .form-control:focus {
     box-shadow: 0 0 5px rgba(0,123,255,0.5);
   }
+
+.badge-start {
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  color: white;
+  padding: 6px 14px;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+}
+
+.badge-deadline {
+  background: linear-gradient(135deg, #ff5858, #f09819);
+  color: white;
+  padding: 6px 14px;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+}

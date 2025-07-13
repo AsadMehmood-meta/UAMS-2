@@ -1,15 +1,28 @@
-
-<div class="d-flex flex-wrap gap-4 justify-content-start">
+<div class="d-flex flex-wrap gap-4 justify-content-center">
   {% for project in projects %}
-    <div class="card shadow-sm p-3" style="width: 22rem;">
-      <div class="card-body">
-        <h5 class="card-title">{{ project.project_title }}</h5>
-        <p class="card-text text-muted">{{ project.description }}</p>
+  <div class="card shadow-sm p-3" style="width: 22rem;">
+    <div class="card-body">
+      <h5 class="card-title text-center">{{ project.project_title }}</h5>
+
+      <p class="card-text text-muted">{{ project.description }}</p>
+
+      <div class="flex custom-flex">
+        <span class="badge badge-start">Start: {{ project.start_date }}</span>
+        <span class="badge badge-deadline">Deadline: {{ project.deadline }}</span>
       </div>
+
+      <div>
+      <p >
+        <strong>Progress:</strong>
+        {% if project.progress == 0 %}
+        🟥 Not Started
+        {% elif project.progress < 50 %} 🟨 In Progress ({{ project.progress }}%) {% elif project.progress < 100 %} 🟦
+          Near Completion ({{ project.progress }}%) {% else %} ✅ Completed {% endif %} </p>
+      </div>
+
     </div>
+  </div>
   {% else %}
-    <p>No projects found.</p>
+  <p>No projects found.</p>
   {% endfor %}
 </div>
-
-
