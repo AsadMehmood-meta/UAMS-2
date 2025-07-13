@@ -5,6 +5,10 @@ from flask import render_template , request
 def home():
     return render_template('home.html') # default home
 
+@app.route('/login', methods=['GET'])
+def login():
+    return render_template('login.html') , 200
+
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
     if request.method == 'POST':

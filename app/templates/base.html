@@ -18,10 +18,15 @@
     <div class="collapse navbar-collapse" id="mainNavbar">
       <ul class="navbar-nav">
 
-        <!-- Job Management -->
+        <!-- Home -->
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('home') }}">Home</a>
+        </li>
+
+        <!-- Jobs-->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="jobDropdown" role="button" data-bs-toggle="dropdown">
-            Job Management
+            Jobs
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="{{ url_for('all_jobs') }}">All Jobs</a></li>
@@ -30,39 +35,28 @@
           </ul>
         </li>
 
-        <!-- Tasks & Projects -->
+        <!-- Projects & Tasks -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="taskDropdown" role="button" data-bs-toggle="dropdown">
-            Tasks & Projects
+            Projects & Tasks
           </a>
           <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{{ url_for('projects') }}">Projects</a></li>
             <li><a class="dropdown-item" href="{{ url_for('assigned_tasks') }}">Assigned Tasks</a></li>
             <li><a class="dropdown-item" href="{{ url_for('team_taskboard') }}">Team Taskboard</a></li>
             <li><a class="dropdown-item" href="{{ url_for('project_deadlines') }}">Project Deadlines</a></li>
           </ul>
         </li>
 
-        <!-- Team Management -->
+        <!-- Members -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="teamDropdown" role="button" data-bs-toggle="dropdown">
-            Team Management
+            Members
           </a>
           <ul class="dropdown-menu">
             <!-- <li><a class="dropdown-item" href="{{ url_for('assigned_tasks') }}">Assign Tasks</a></li> -->
             <li><a class="dropdown-item" href="{{ url_for('team_overview') }}">Team Overview</a></li>
             <li><a class="dropdown-item" href="{{ url_for('roles_permissions') }}">Roles & Permissions</a></li>
-          </ul>
-        </li>
-
-        <!-- Reports -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="reportDropdown" role="button" data-bs-toggle="dropdown">
-            Reports
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="{{ url_for('operational_reports') }}">Operational Reports</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('proposal_success') }}">Proposal Success Rate</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('productivity') }}">Team Productivity</a></li>
           </ul>
         </li>
 
@@ -75,6 +69,12 @@
         <li class="nav-item">
           <a class="nav-link" href="{{ url_for('dashboard') }}">Dashboard</a>
         </li>
+
+        <!-- Login -->
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('login') }}">Login</a>
+        </li>
+
       </ul>
 
       <!-- My Account -->

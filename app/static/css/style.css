@@ -1,0 +1,28 @@
+
+  .home-wrapper {
+    min-height: 85vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .home-welcome {
+    flex: 1;
+    padding: 40px;
+    min-width: 300px;
+  }
+
+  .login-container {
+    flex: 1;
+    max-width: 400px;
+    padding: 40px;
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    min-width: 300px;
+  }
+
+  .form-control:focus {
+    box-shadow: 0 0 5px rgba(0,123,255,0.5);
+  }
