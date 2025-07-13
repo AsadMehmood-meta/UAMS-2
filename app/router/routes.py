@@ -56,17 +56,14 @@ def proposals():
 def assigned_tasks():
     return render_template("assigned_tasks.html")  # Assigned Tasks
 
-@app.route('/taskboard')
-def taskboard():
-    return render_template('taskboard.html')
+@app.route('/team_taskboard')
+def team_taskboard():
+    return render_template('team_taskboard.html')
 
-@app.route('/deadlines')
-def deadlines():
-    return render_template('deadlines.html')
+@app.route("/project_deadlines")
+def project_deadlines():
+    return render_template("project_deadlines.html")
 
-@app.route('/assign_tasks')
-def assign_tasks():
-    return render_template('assign_tasks.html')
 
 @app.route('/team_overview')
 def team_overview():
@@ -76,9 +73,9 @@ def team_overview():
 def roles_permissions():
     return render_template('roles_permissions.html')
 
-@app.route('/reports')
-def reports():
-    return render_template('reports.html')
+@app.route("/operational_reports")
+def operational_reports():
+    return render_template("operational_reports.html")
 
 @app.route('/proposal_success')
 def proposal_success():
