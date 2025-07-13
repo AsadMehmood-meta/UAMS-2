@@ -1,0 +1,21 @@
+{% for task in assigned_tasks_table %}
+<tr>
+    <td>{{ loop.index }}</td>
+    <td>{{ task.tasks_title }}</td>
+    <td>{{ task.project_title }}</td>
+    <td>{{ task.assigned_to }}</td>
+    <td>{{ task.assigned_date }}</td>
+    <td>{{ task.deadline }}</td>
+    <td>
+        {% if task.status == 'Completed' %}
+        <span class="badge bg-success">Completed</span>
+        {% elif task.status == 'In Progress' %}
+        <span class="badge bg-info text-dark">In Progress</span>
+        {% else %}
+        <span class="badge bg-warning text-dark">Pending</span>
+        {% endif %}
+    </td>
+</tr>
+{% else %}
+<tr><td colspan="7">No tasks assigned right now.</td></tr>
+{% endfor %}

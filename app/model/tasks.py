@@ -1,21 +1,29 @@
 from app.db import get_db_connection
 
-def get_all_projects():
+assigned_tasks_query = "SELECT t.task_title AS tasks_title, p.project_title AS project_title, CONCAT(u.first_name, ' ', u.last_name) AS assigned_to, a.assigned_date, t.deadline, t.status FROM assignment a JOIN task t ON a.task_id = t.task_id JOIN project p ON t.project_id = p.project_id JOIN user u ON a.user_id = u.user_id;"
+
+
+def get_all_tasks():
     connection = get_db_connection()
     cursor = connection.cursor(dictionary=True)
 
-    # get all projects with their IDs (needed to match with tasks)
-    cursor.execute("SELECT id, project_title, description FROM project")
-    projects = cursor.fetchall()
-
-    # get all tasks
+    # get assigned tasks tasks
     cursor.execute("SELECT * FROM task")
-    tasks = cursor.fetchall()
-
-    # Map tasks to their respective project
-    for proj in projects:
-        proj["tasks"] = [task for task in tasks if task["project_id"] == proj["id"]]
+    all_tasks = cursor.fetchall()
 
     cursor.close()
     connection.close()
-    return projects
+    return all_tasks
+
+
+def get_assigned_tasks():
+    connection = get_db_connection()
+    cursor = connection.cursor(dictionary=True)
+
+    # get assigned tasks tasks
+    cursor.execute(assigned_tasks_query)
+    assigned_tasks = cursor.fetchall()
+
+    cursor.close()
+    connection.close()
+    return assigned_tasks

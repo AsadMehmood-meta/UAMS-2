@@ -12,12 +12,12 @@
       </div>
 
       <div>
-      <p >
-        <strong>Progress:</strong>
-        {% if project.progress == 0 %}
-        🟥 Not Started
-        {% elif project.progress < 50 %} 🟨 In Progress ({{ project.progress }}%) {% elif project.progress < 100 %} 🟦
-          Near Completion ({{ project.progress }}%) {% else %} ✅ Completed {% endif %} </p>
+        <p>
+          <strong>Progress:</strong>
+          {% if project.progress == 0 %}
+          🟥 Not Started
+          {% elif project.progress < 50 %} 🟨 In Progress ({{ project.progress }}%) {% elif project.progress < 100 %} 🟦
+            Near Completion ({{ project.progress }}%) {% else %} ✅ Completed {% endif %} </p>
       </div>
 
     </div>

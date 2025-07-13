@@ -56,10 +56,6 @@ def feasibility():
 def proposals():
     return render_template('proposals.html')
 
-@app.route("/assigned_tasks")
-def assigned_tasks():
-    return render_template("assigned_tasks.html")  # Assigned Tasks
-
 @app.route('/team_taskboard')
 def team_taskboard():
     return render_template('team_taskboard.html')
