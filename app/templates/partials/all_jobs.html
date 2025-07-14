@@ -1,0 +1,18 @@
+{% for job in all_jobs %}
+<div class="card mb-4">
+  <div class="card-header text-white" style="background-color: #485461;">
+    <h5 class="mb-0">{{ job.title }}</h5>
+  </div>
+  <div class="card-body">
+    <p class="card-text"><strong>Description:</strong> {{ job.description }}</p>
+    <p class="mb-1"><strong>Category:</strong> {{ job.category }}</p>
+    <p class="mb-1"><strong>Connects Required:</strong> {{ job.connects_required }}</p>
+    <p class="mb-1"><strong>Posted at:</strong> {{ job.date_posted }}</p>
+    <p class="mb-1"><strong>Deadline:</strong> {{ job.deadline }}</p>
+    <p class="mb-1"><strong>Client Country:</strong> {{ job.client_country }}</p>
+    <p class="mb-1"><strong>Feasibility Score:</strong> {{ job.feasibility_score }}</p>
+  </div>
+</div>
+{% else %}
+<p>No jobs available at the moment.</p>
+{% endfor %}

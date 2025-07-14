@@ -26,17 +26,9 @@
             <a class="nav-link text-white" href="{{ url_for('home') }}">Home</a>
           </li>
 
-          <!-- Jobs-->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-white" href="#" id="jobDropdown" role="button"
-              data-bs-toggle="dropdown">
-              Jobs
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item " href="{{ url_for('all_jobs') }}">All Jobs</a></li>
-              <li><a class="dropdown-item " href="{{ url_for('feasibility') }}">Feasibility Analysis</a></li>
-              <li><a class="dropdown-item " href="{{ url_for('proposals') }}">Proposal Generator</a></li>
-            </ul>
+          <!-- Job -->
+          <li class="nav-item">
+            <a class="nav-link text-white" href="{{ url_for('jobs') }}">Jobs</a>
           </li>
 
           <!-- Projects & Tasks -->
@@ -87,8 +79,8 @@
         <div class="d-flex align-items-center ms-auto">
           <!-- Search box with margin-end -->
           <div class="me-3">
-            <input type="text" class="form-control" placeholder="Search here..."
-            onfocus="this.placeholder=''" onblur="this.placeholder='Search here...'">
+            <input type="text" class="form-control" placeholder="Search here..." onfocus="this.placeholder=''"
+              onblur="this.placeholder='Search here...'">
           </div>
 
           <!-- My Account -->
@@ -110,13 +102,40 @@
     </div>
   </nav>
 
+  <!-- Scroll to Top Button -->
+  <button id="scrollTopBtn" onclick="scrollToTop()" title="Go to top">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 36" stroke="#28313B" width="38" height="38">
+      <!-- Triple Chevron Up -->
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 30l7-7 7 7" />
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 22l7-7 7 7" />
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l7-7 7 7" />
+    </svg>
+  </button>
+
   <!-- Page Content -->
   <div class="container mt-4">
     {% block content %}{% endblock %}
   </div>
 
+  <script>
+    // Show button when scrolled down 100px
+    window.onscroll = function () {
+      const btn = document.getElementById("scrollTopBtn");
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        btn.style.display = "block";
+      } else {
+        btn.style.display = "none";
+      }
+    };
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/htmx.org@1.9.2"></script>
+
 </body>
 
 </html>
