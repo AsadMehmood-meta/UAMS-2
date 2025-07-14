@@ -24,34 +24,6 @@ def budget():
 def dashboard():
     return render_template('dashboard.html')
 
-@app.route("/all_jobs")
-def all_jobs():
-    jobs = [
-        {
-            "title": "Build a Flask Web App",
-            "description": "Looking for someone to build a Flask app to manage my freelancing workflow...",
-            "category": "Web Dev",
-            "budget": 150
-        },
-        {
-            "title": "Create Upwork Proposal Templates",
-            "description": "Need a proposal generator for Upwork job scraping system with dynamic fields...",
-            "category": "Content Writing",
-            "budget": 80
-        },
-        {
-            "title": "Automate Upwork Bidding",
-            "description": "Want to scrape jobs from Upwork and auto-send proposals using Python + Selenium.",
-            "category": "Automation",
-            "budget": 200
-        }
-    ]
-    return render_template("all_jobs.html", jobs=jobs) # All Jobs
-
-@app.route('/feasibility')
-def feasibility():
-    return render_template('feasibility.html')
-
 @app.route('/proposals')
 def proposals():
     return render_template('proposals.html')

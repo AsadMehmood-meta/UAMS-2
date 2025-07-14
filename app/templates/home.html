@@ -1,13 +1,39 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="container home-wrapper">
-  
+<div class="p-1">
+
   <div class="home-welcome">
-    <h1 class="mb-4">Welcome to MyUpwork Agency Panel</h1>
-    <p class="lead">Manage your projects, team, budgets and proposals efficiently. Access your dashboard, reports, and more — all in one place.</p>
+    <h1 class="mb-2">Welcome to MyUpwork Agency Panel</h1>
+    <p class="lead">Manage your projects, team, budgets and proposals efficiently. Access your dashboard, reports, and
+      more — all in one place.</p>
   </div>
 
 </div>
+
+<div class="container">
+  <div class="row">
+
+    <!-- Jobs Column -->
+    <div class="col-md-6">
+      <h4 class="mb-3 text-center">Latest Jobs</h4>
+      <div hx-get="/jobs/list" hx-trigger="load" hx-target="this" hx-swap="innerHTML">
+        <p>Loading jobs...</p>
+      </div>
+      <div id="job-preview"></div>
+    </div>
+
+    <!-- Projects Column -->
+    <div class="col-md-6">
+      <h4 class="mb-3 text-center">Ongoing Projects</h4>
+      <div hx-get="/projects/list" hx-trigger="load" hx-target="this" hx-swap="innerHTML">
+        <p>Loading projects...</p>
+      </div>
+      <div id="project-preview"></div>
+    </div>
+
+  </div>
+</div>
+
 
 {% endblock %}

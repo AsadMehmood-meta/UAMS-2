@@ -1,28 +1,33 @@
-<div class="d-flex flex-wrap gap-4 justify-content-center">
+<div class="d-flex flex-wrap gap-3 justify-content-center px-1 py-3">
   {% for project in projects %}
-  <div class="card shadow-sm p-3" style="width: 22rem;">
+  <div class="card shadow-sm" style="width: 22rem; background-color: #ffffff; border-radius: 12px;">
     <div class="card-body">
-      <h5 class="card-title text-center">{{ project.project_title }}</h5>
+      <h5 class="card-title text-white px-3 py-2 mb-3" style="background-color: #485461; border-radius: 8px;">
+        {{ project.project_title }}
+      </h5>
 
-      <p class="card-text text-muted">{{ project.description }}</p>
+      <p class="card-text text-muted" style="min-height: 80px;">{{ project.description }}</p>
 
-      <div class="flex custom-flex">
-        <span class="badge badge-start">Start: {{ project.start_date }}</span>
-        <span class="badge badge-deadline">Deadline: {{ project.deadline }}</span>
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <span class="badge-start">Start: {{ project.start_date }}</span>
+        <span class="badge-deadline">Deadline: {{ project.deadline }}</span>
       </div>
 
       <div>
-        <p>
-          <strong>Progress:</strong>
-          {% if project.progress == 0 %}
+        <strong>Progress:</strong>
+        {% if project.progress == 0 %}
           🟥 Not Started
-          {% elif project.progress < 50 %} 🟨 In Progress ({{ project.progress }}%) {% elif project.progress < 100 %} 🟦
-            Near Completion ({{ project.progress }}%) {% else %} ✅ Completed {% endif %} </p>
+        {% elif project.progress < 50 %}
+          🟨 In Progress ({{ project.progress }}%)
+        {% elif project.progress < 100 %}
+          🟦 Near Completion ({{ project.progress }}%)
+        {% else %}
+          ✅ Completed
+        {% endif %}
       </div>
-
     </div>
   </div>
   {% else %}
-  <p>No projects found.</p>
+    <p>No projects found.</p>
   {% endfor %}
 </div>
