@@ -1,29 +1,33 @@
-<!-- Team Taskboard Page -->
 {% extends "base.html" %}
 {% block content %}
 <div class="container py-5">
-  <h2 class="mb-4">Team Taskboard</h2>
+  <h2 class="section-title mb-4">Team Taskboard</h2>
   <div class="row">
+    <!-- To Do -->
     <div class="col-md-4">
-      <div class="card">
-        <div class="card-header bg-secondary text-white">To Do</div>
+      <div class="table-card">
+        <div class="table-card-header">To Do 📝</div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">Fix Upwork API</li>
           <li class="list-group-item">Create login page</li>
         </ul>
       </div>
     </div>
+
+    <!-- In Progress -->
     <div class="col-md-4">
-      <div class="card">
-        <div class="card-header bg-info text-white">In Progress</div>
+      <div class="table-card">
+        <div class="table-card-header-progress">In Progress 🚧</div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">Proposal formatting</li>
         </ul>
       </div>
     </div>
+
+    <!-- Completed -->
     <div class="col-md-4">
-      <div class="card">
-        <div class="card-header bg-success text-white">Completed</div>
+      <div class="table-card">
+        <div class="table-card-header-done">Completed ✅</div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">Job parser setup</li>
         </ul>

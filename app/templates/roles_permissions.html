@@ -1,33 +1,44 @@
 <!-- Roles & Permissions Page -->
 {% extends "base.html" %}
 {% block content %}
-<div class="container py-5">
-  <h2 class="mb-4">Roles & Permissions</h2>
-  <table class="table table-hover">
-    <thead class="table-dark">
-      <tr>
-        <th>Name</th>
-        <th>Role</th>
-        <th>Permissions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Ali</td>
-        <td>Scraper Developer</td>
-        <td>Scraping, Job Management</td>
-      </tr>
-      <tr>
-        <td>Sara</td>
-        <td>Proposal Writer</td>
-        <td>Proposal Generator, Report Writing</td>
-      </tr>
-      <tr>
-        <td>Ahmed</td>
-        <td>Dashboard Designer</td>
-        <td>Dashboard Access, UI Changes</td>
-      </tr>
-    </tbody>
-  </table>
+<div class="container">
+  <h2 class="section-title mb-4">Roles & Permissions</h2>
+
+  <div class="card border-secondary">
+    <div class="card-body">
+
+      <table class="table table-striped table-hover mb-0">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Role</th>
+            <th>Permissions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Ali</td>
+            <td>Scraper Developer</td>
+            <td>Scraping, Job Management</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Sara</td>
+            <td>Proposal Writer</td>
+            <td>Proposal Generator, Report Writing</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Ahmed</td>
+            <td>Dashboard Designer</td>
+            <td>Dashboard Access, UI Changes</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
 </div>
 {% endblock %}
