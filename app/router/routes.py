@@ -1,5 +1,6 @@
 from app import app
-from flask import render_template , request
+from flask import render_template, request, redirect, url_for
+
 
 @app.route('/')
 def home():
@@ -61,5 +62,22 @@ def productivity():
 def logout():
     return "You have been logged out (placeholder)"
 
+@app.route('/profile')
+def profile():
+    return render_template('profile.html')
+
+@app.route('/profile/edit', methods=['GET', 'POST'])
+def profile_edit():
+    if request.method == 'POST':
+        # Here, you’d handle saving the updated data
+        # Example: get form data and update the database
+        # full_name = request.form['full_name']
+        return redirect(url_for('profile'))
+
+    return render_template('profile_edit.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+
