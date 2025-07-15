@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [[source]]
 url = "https://pypi.org/simple"
 verify_ssl = true
@@ -10,3 +11,17 @@ requests = "*"
 
 [requires]
 python_version = "3.13"
+=======
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+requests = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.13"
+>>>>>>> 7ca1db230b61a2d4bb7786040d65f0c1ea2d49b3
