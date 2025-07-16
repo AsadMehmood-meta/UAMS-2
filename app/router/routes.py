@@ -1,11 +1,7 @@
-<<<<<<< HEAD
-from flask import render_template , request
-from app import app
-=======
+
 from app import app
 from flask import render_template, request, redirect, url_for
 
->>>>>>> 08f3d6737af69c8669c3820566fed21677bd5365
 
 @app.route('/')
 def home():
