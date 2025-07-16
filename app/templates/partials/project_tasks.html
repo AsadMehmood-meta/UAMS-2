@@ -1,0 +1,24 @@
+{% if project_tasks %}
+{% for task in project_tasks %}
+<div class="border rounded px-3 py-2 mb-2 bg-light d-flex justify-content-between align-items-start">
+
+  <div class="border rounded px-3 py-2 mb-2 bg-light">
+    <strong>{{ task.task_title }}</strong>
+    <p class="mb-1 text-muted">{{ task.description }}</p>
+    <small class="badge bg-secondary">Priority: {{ task.priority }}</small>
+    <small class="badge bg-info text-dark">Status: {{ task.status }}</small>
+    <small class="badge bg-success">Deadline: {{ task.deadline }}</small>
+    <small class="badge bg-warning text-dark">Progress: {{ task.progress }}%</small>
+  </div>
+
+  <form method="POST" action="{{ url_for('delete_task', task_id=task.task_id) }}"
+    hx-post="{{ url_for('delete_task', task_id=task.task_id) }}" hx-target="closest div" hx-swap="outerHTML"
+    hx-on="htmx:afterRequest: location.reload()">
+    <button type="submit" class="btn btn-sm btn-danger ms-2">🗑️</button>
+  </form>
+
+</div>
+{% endfor %}
+{% else %}
+<div class="text-muted">No tasks found for this project.</div>
+{% endif %}

@@ -1,6 +1,6 @@
 from flask import render_template
 from app import app
-from app.model.project import get_all_projects
+from app.model import query
 
 @app.route("/projects")
 def projects():
@@ -8,7 +8,8 @@ def projects():
 
 @app.route("/projects/list")
 def project_list():
-    projects = get_all_projects()
+    all_projects_query = "SELECT * FROM project ORDER BY created_at"
+    projects = query(all_projects_query)
     return render_template("partials/project_list.html", projects=projects)
 
 
