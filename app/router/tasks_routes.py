@@ -47,7 +47,7 @@ def submit_new_task():
     """
     query(insert_task_query)
 
-    return redirect(url_for("project_task", project_id=project_id))
+    return redirect(url_for("projects"))
 
 
 
