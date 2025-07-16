@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="profile-card p-4 bg-white rounded shadow-sm">
+
+        <h2 class="text-header mb-4">User Profile</h2>
+
+        <div class="row mb-3">
+          <div class="col-6 fw-bold">Full Name:</div>
+          <div class="col-6">Dania RQ</div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-6 fw-bold">Email:</div>
+          <div class="col-6">dania@example.com</div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-6 fw-bold">Phone:</div>
+          <div class="col-6">+92-300-1234567</div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-6 fw-bold">Role:</div>
+          <div class="col-6">Full Stack Developer</div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-6 fw-bold">Website:</div>
+          <div class="col-6"><a href="https://daniarq.dev" target="_blank">daniarq.dev</a></div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-6 fw-bold">Date of Birth:</div>
+          <div class="col-6">15 July 1997</div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-6 fw-bold">Education:</div>
+          <div class="col-6">BSc in Computer Science</div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-6 fw-bold">Skills:</div>
+          <div class="col-6">HTML, CSS, JavaScript, Vue.js, Python, SQL</div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-6 fw-bold">Languages:</div>
+          <div class="col-6">English, Urdu</div>
+        </div>
+
+        <!-- ✅ Edit Button at the Bottom -->
+        <div class="text-right mt-4">
+          <a href="{{ url_for('profile_edit') }}" class="btn btn-primary px-4">Edit Profile</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
