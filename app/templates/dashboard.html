@@ -3,8 +3,8 @@
 
 <div class="container">
   <div class="section-title">
-    <h2>Agency Dashboard</h2>   
-  </div> 
+    <h2>Agency Dashboard</h2>
+  </div>
   <p></p>
 
   <!-- Row 1: Stats Summary -->
@@ -76,7 +76,7 @@
     <div class="col">
       <div class="card border-dark">
         <div class="card-header text-white" style="background-color: #485461;"">Upcoming Deadlines</div>
-        <table class="table table-striped table-hover">
+        <table class=" table table-striped table-hover">
           <thead>
             <tr>
               <th>#</th>
@@ -105,55 +105,149 @@
               <td>Team QA</td>
             </tr>
           </tbody>
-        </table>
+          </table>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- Row 4: Operational Reports -->
-  <div class="row mb-5">
-    <div class="col">
-      <div class="card border-dark">
-        <div class="card-header text-white" style="background-color: #485461;"">Operational Reports</div>
-        <table class="table table-striped table-hover">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Metric</th>
-              <th>Value</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Jobs Scraped</td>
-              <td>192</td>
-              <td><span class="badge bg-success">Updated</span></td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Proposals Sent</td>
-              <td>87</td>
-              <td><span class="badge bg-success">Stable</span></td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Tasks Assigned</td>
-              <td>34</td>
-              <td><span class="badge bg-info text-dark">In Progress</span></td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>Active Projects</td>
-              <td>12</td>
-              <td><span class="badge bg-primary">Running</span></td>
-            </tr>
-          </tbody>
-        </table>
+    <!-- Row 4: Operational Reports -->
+    <div class="row mb-5">
+      <div class="col">
+        <div class="card border-dark">
+          <div class="card-header text-white" style="background-color: #485461;"">Operational Reports</div>
+        <table class=" table table-striped table-hover">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Metric</th>
+                <th>Value</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Jobs Scraped</td>
+                <td>192</td>
+                <td><span class="badge bg-success">Updated</span></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Proposals Sent</td>
+                <td>87</td>
+                <td><span class="badge bg-success">Stable</span></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Tasks Assigned</td>
+                <td>34</td>
+                <td><span class="badge bg-info text-dark">In Progress</span></td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Active Projects</td>
+                <td>12</td>
+                <td><span class="badge bg-primary">Running</span></td>
+              </tr>
+            </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
-{% endblock %}
+    <!-- 🔽 CHARTS Section from new dashboard -->
+    <div class="row mb-5">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header bg-primary text-white">Task Status Overview</div>
+          <div class="card-body">
+            <canvas id="taskStatusPie"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header bg-success text-white">Monthly Project Count</div>
+          <div class="card-body">
+            <canvas id="monthlyProjectsBar"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-5">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header bg-info text-white">Revenue Breakdown</div>
+          <div class="card-body">
+            <canvas id="revenueDoughnut"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header bg-warning text-white">{{ project_name }} - Task Status</div>
+          <div class="card-body">
+            <canvas id="projectTasksHorizontal"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 🔽 Charts Script -->
+    <script>
+      new Chart(document.getElementById('taskStatusPie'), {
+        type: 'pie',
+        data: {
+          labels: {{ pie_labels| tojson }},
+        datasets: [{
+          data: {{ pie_values| tojson }},
+        backgroundColor: ['#4caf50', '#ffc107', '#f44336']
+      }]
+    }
+  });
+
+      new Chart(document.getElementById('monthlyProjectsBar'), {
+        type: 'bar',
+        data: {
+          labels: {{ bar_labels| tojson }},
+        datasets: [{
+          label: 'Projects',
+          data: {{ bar_values| tojson }},
+        backgroundColor: '#2196f3'
+      }]
+    }
+  });
+
+      new Chart(document.getElementById('revenueDoughnut'), {
+        type: 'doughnut',
+        data: {
+          labels: {{ revenue_labels| tojson }},
+        datasets: [{
+          data: {{ revenue_values| tojson }},
+        backgroundColor: ['#ff5722', '#4caf50', '#ff9800', '#9c27b0', '#03a9f4', '#cddc39']
+      }]
+    }
+  });
+
+      new Chart(document.getElementById('projectTasksHorizontal'), {
+        type: 'bar',
+        data: {
+          labels: {{ task_names| tojson }},
+        datasets: [{
+          label: 'Task Status',
+          data: [100, 70, 40, 10],
+          backgroundColor: ['#4caf50', '#ffc107', '#9e9e9e', '#f44336']
+        }]
+    },
+        options: {
+        indexAxis: 'y'
+      }
+  });
+    </script>
+
+    {% endblock %}

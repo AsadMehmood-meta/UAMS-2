@@ -1,6 +1,6 @@
 from flask import render_template
 from app import app
-from app.model import query
+from app.model.manual_query import query
 
 @app.route("/projects")
 def projects():
